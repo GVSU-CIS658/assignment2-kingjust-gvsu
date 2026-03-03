@@ -95,18 +95,51 @@ function setupSyrupListeners(): void {
 setupSyrupListeners();
 
 function setupCreamListeners(): void {
-  // TODO: implement this function
+  const radios = document.querySelectorAll<HTMLInputElement>('input[name="cream"]');
+
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      applyCream(radio);
+    });
+  });
+
+  const checked = document.querySelector<HTMLInputElement>('input[name="cream"]:checked');
+  if (checked) {
+    applyCream(checked);
+  }
 }
 setupCreamListeners();
 
 function setupTemperatureListeners(): void {
-  // TODO: implement this function
+  const radios = document.querySelectorAll<HTMLInputElement>('input[name="temperature"]');
+
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      applyTemperature(radio);
+    });
+  });
+
+  const checked = document.querySelector<HTMLInputElement>('input[name="temperature"]:checked');
+  if (checked) {
+    applyTemperature(checked);
+  }
 }
 
 setupTemperatureListeners();
 
 function setupBaseListeners(): void {
-  // TODO: implement this function
+  const radios = document.querySelectorAll<HTMLInputElement>('input[name="base"]');
+
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      applyBase(radio);
+    });
+  });
+
+  const checked = document.querySelector<HTMLInputElement>('input[name="base"]:checked');
+  if (checked) {
+    applyBase(checked);
+  }
 }
 
 setupBaseListeners();
